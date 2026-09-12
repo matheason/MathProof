@@ -1,0 +1,497 @@
+\documentclass[12pt]{article}
+\usepackage{amscd,amssymb,amsthm,amsmath,graphicx, url, color,
+verbatim}
+\usepackage{enumerate}
+\usepackage{parskip}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Proof portfolio Math 314}
+\author{Yicheng (Eason) Jiang}
+\date{August 2026}
+
+\begin{document}
+
+\maketitle
+
+
+\setlength{\textwidth}{6.5truein}
+\setlength{\hoffset}{-.4truein}
+\setlength{\textheight}{9.5truein}\setlength\headheight{0in}
+\setlength\topmargin{-.75in}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{Theorem}{Theorem}
+\newtheorem{Conjecture}[equation]{Conjecture}
+\newtheorem{Lemma}[equation]{Lemma}
+\newtheorem{Proposition}{Proposition}
+\newtheorem{Corollary}{Corollary}
+\newtheorem*{Definition}{Definition}
+\pagestyle{empty}
+\begin{center}
+{\bf Proof portfolio part I}
+\end{center}
+\begin{Lemma} If $n$ is any integer, then $n^2+n$ is even.
+\end{Lemma}
+\begin{proof}
+Let $n \in \Z$.
+
+We have $n^2+n=n(n+1)$.
+
+Assume $n$ is even, so $\exists k_1 \in \Z, \text{s.t. } n=2k_1$.
+\[
+n^2+n=2k_1(n+1)
+\]
+$\exists k_2 = k_1(n+1) \in \Z, \text{s.t. } n^2+n =2k_2$, so $n^2+n$ is even if $n$ is even.
+
+Assume $n$ is odd, so $\exists k_3 \in \Z, \text{s.t. } n=2k_3+1$.
+\begin{align*}
+n+1 &= 2k_3+1+1=2(k_3+1) \\
+n^2+n &= n(n+1)=n(2k_4)=2(nk_4)
+\end{align*}
+$\exists k_4=k_3+1 \in \Z, \text{s.t. } n+1=2k_4$, so $n+1$ is even.
+
+$\exists k_5=nk_4\in \Z, \text{s.t. } n^2+n = 2k_5$.
+
+So $n^2+n$ is even if $n$ is odd.
+
+Overall $n^2+n$ is even if $n \in \Z$.
+\end{proof}
+\vfill
+\begin{Lemma} Let $x$ and $y$ be integers. Prove that $x^{2}+x
+y$ is odd if and only if $x$ is odd and $y$ is even.
+\end{Lemma}
+\begin{proof}
+(Forward) (Proof by contradiction) Let $x^2+xy$ is odd.
+
+$\exists k_1 \in \Z, s.t. x^2+xy = 2k_1+1$
+
+If x is even:
+$\exists k_2 \in \Z, s.t. x = 2k_2$
+
+\[
+x^2+xy = 4 k_2^2+2k_2y = 2(2k_2^2+k_2y)
+\]
+
+So, $\exists k_3=2k_2^2+k_2y \in \Z, s.t. x^2+xy = 2 k_3$, $x^2+xy$ is even, contridiction, x is odd.
+
+If y is odd:
+$\exists k_4 \in \Z, s.t. y = 2k_4 +1$
+
+$x^2+xy= x^2+(2k_4+1)x = x(x+2k_4+1)$
+
+Since x is odd (Proof above): 
+$\exists k_5 \in \Z, s.t. x = 2k_5 +1$
+
+$x(x+2k_4+1)=(2k_5+1)(2k_5+2k_4+2)=2[(2k_5+1)(k_5+k_4+1)]$
+
+$\exists k_6= (2k_5+1)(k_5+k_4+1) \in \Z, s.t. x(x+2k_4+1) = 2k_6$
+
+So $x(x+2k_4+1)$ is even, contradiction.
+
+So $x^2 + xy$ is odd if $x$ is odd and $y$ is even. 
+
+(Backward) Let x be odd and y be even.
+
+$\exists k_7 \in \Z, s.t. x = 2k_7+1$
+
+$\exists k_8 \in \Z, s.t. y = 2k_8$
+\[
+x^2+xy = x(x+y)=(2k_7+1)(2k_7+1+2k_8)
+\]
+\[
+=4k_7^2+2k_7+2k_7+1+4k_7k_8+2k_8
+\]
+\[
+=2(2k_7^2+k_7+k_7+2k_7k_8+k_8)+1
+\]
+
+$\exists k_9= 2k_7^2+2k_7+2k_7k_8+k_8\in \Z, s.t. x^2+xy=2k_9+1$
+
+So $x^2+xy$ is odd. 
+\end{proof}
+\vfill
+\begin{Lemma} If $x$ and $y$ are real numbers with $x y>0$,
+then $\frac{x}{y}+\frac{y}{x} \geq 2$. Determine when equality
+holds.
+\end{Lemma}
+\begin{proof}
+Since $(x-y)^2 \geq 0$,
+
+\[
+\Rightarrow x^2-2xy+y^2 \geq 0
+\]
+
+\[
+\Rightarrow x^2+y^2 \geq 2xy
+\]
+
+Since $xy>0$,
+
+\[
+\frac{x^2+y^2}{xy} \geq \frac{2xy}{xy}
+\]
+
+\[
+\Rightarrow \frac{x}{y}+ \frac{y}{x}\geq 2
+\]
+
+The equality holds when $(x-y)^2=0$, $x=y$.
+
+\end{proof}
+\vfill
+\hrulefill
+\vfill
+Let $(x_n) = (x_1,x_2,x_3,...)$ denote a sequence of real
+numbers. Consider the following definitions\\
+\begin{Definition}
+"$(x_n)$ diverges to $\infty$" means:
+$ \forall M > 0, \exists N \in \mathbb{R}$ such that $n > N
+\Rightarrow x_n > M$
+\end{Definition}
+\begin{Definition}
+"$(x_n)$ converges to $L$" means: $\forall \epsilon > 0$, $\exists N \in \mathbb{R}$ such
+that $n > N \Rightarrow |x_n - L| < \epsilon$
+\end{Definition}
+\begin{Definition}
+"$(x_n)$ does not to diverge to $\infty$" means: $ \exists M > 0, \forall N \in \mathbb{R}$ such that $n > N$
+and $x_n \leq M$
+\end{Definition}
+\begin{Definition}
+"$(x_n)$ does not converge to $L$" means: $\exists \epsilon > 0$, $\forall N \in \mathbb{R}$ such
+that $n > N$ and $|x_n - L| \geq \epsilon$
+\end{Definition}
+\begin{Definition}
+"$(x_n)$ does not to converges at all" means: $\forall L \in \R$, $\exists \epsilon > 0$, $\forall N \in \mathbb{R}$ such
+that $n > N$ and $|x_n - L| \geq \epsilon$
+\end{Definition}
+\vfill
+\hrulefill
+\vfill
+In the next two Lemmas, all variables are integers.
+\begin{Lemma} If $a\mid b$ and $c\mid d$ then $ac\mid bd$.
+\end{Lemma}
+\begin{proof}
+$\exists k_1 \in \Z$, such that $\frac{b}{a} = k_1$, and
+
+$\exists k_2 \in \Z$, such that $\frac{d}{c} = k_2$.
+
+So $k_1k_2 = \frac{bd}{ac}$,
+
+and $k_1k_2 \in \Z$.
+
+So $\exists k_3=k_1k_2 \in \Z$, such that $\frac{bd}{ac} = k_3$.
+
+$\Rightarrow ac \mid bd$. 
+\end{proof}
+\vfill
+\begin{Lemma}
+If $a\mid b$ and $a\mid c$ then $a\mid (bx+cy)$ for any $x, y\in
+\Z$.
+\end{Lemma}
+\begin{proof}
+$\exists k_1 \in \Z$, such that $\frac{b}{a} = k_1$, and
+
+$\exists k_2 \in \Z$, such that $\frac{c}{a} = k_2$.
+
+$\forall x,y \in \Z$:
+
+\[
+xk_1+yk_2 \in \Z
+\]
+\[
+x(\frac{b}{a})+y(\frac{c}{a})=\frac{bx+cy}{a} \in \Z
+\]
+
+So $a\mid (bx+cy)$ for any $x, y\in
+\Z$.
+\end{proof}
+\vfill
+\pagestyle{empty}
+\begin{center}
+{\bf Proof portfolio part II}
+\end{center}
+\begin{Lemma} $4^{n}-1$ is divisible by 3 for every natural number $n$.
+\end{Lemma}
+\begin{proof}
+(By Induction) 
+
+1. Base cases: 
+
+$4^1-1 = 3$, $3 \mid 3$.
+
+2. Induction Steps:
+Let $n \in \N$, $4^n-1$ is divisible by 3.
+
+$\Rightarrow 4^n-1 \equiv 0$ (mod 3)
+
+$\Rightarrow 4^n \equiv 1$ (mod 3)
+
+$4^{n+1}-1 \equiv 4(1)-1 \equiv 0$ (mod 3)
+
+$\Rightarrow 4^{n+1}-1$ is divisible by 3.
+
+$4^{n}-1$ is divisible by 3, $\forall n \in \N$.
+\end{proof}
+\vfill
+\begin{Definition}
+Let $A=\left\{(x, y) \in \mathbb{R}^{2}: 2-x-2 y<(2-x)(1-y)\right\}$.
+
+$2-x-2y< 2-x-2y+xy$
+$0<xy \Rightarrow xy>0$
+
+So x, y have the same sign.
+
+\end{Definition}
+\vfill
+\begin{Lemma} $$
+(A \cup B)-C \subseteq(A-(B \cup C)) \cup(B-(A \cap C))
+$$
+\end{Lemma}
+\begin{proof}
+Let $x \in$ Left Hand Side.
+$x \in (A \cup B)-C \iff ((x \in A) \vee (x \in B)) \wedge (x \notin C)$ 
+
+if $x \in A$:
+
+$x\notin B$, by $(x \in A) \vee (x \in B)$.
+Since $x \notin C$, $x\notin (B \cup C)$
+
+$\Rightarrow x\in A - (B \cup C)$
+
+if $x \in B$:
+
+$x\notin A$.
+
+$\Rightarrow x \in B - (A \cap C)$
+ 
+So $x \in (A-(B \cup C)) \vee x \in (B-(A \cap C))$
+
+$\Rightarrow x \in (A-(B \cup C)) \cup(B-(A \cap C))$
+
+So, $(A \cup B)-C \subseteq(A-(B \cup C)) \cup(B-(A \cap C))$.
+
+\end{proof}
+\vfill
+\begin{Lemma} Let $f : A \rightarrow B$ be a function and $X,Y \subseteq A$.
+Then $f(X \bigcap Y) \subseteq f(X) \bigcap f(Y)$ with equality when $f$ is injective.
+\end{Lemma}
+\begin{proof}
+Let $b \in f(X \bigcap Y)$, 
+
+then $\exists a\in X \cap Y$, such that $f(a)=b$
+
+$\Rightarrow (a \in X) \wedge (a\in Y)$
+
+$b = f(a) \in f(X)$ and $b = f(a) \in f(Y)$
+
+$b\in f(X) \bigcap f(Y)$
+
+$\Rightarrow f(X \bigcap Y) \subseteq f(X) \bigcap f(Y)$
+
+If f is injective: 
+
+Let $d \in f(X) \bigcap f(Y)$
+
+$\exists c_1 \in X, c_2 \in Y, f(c_1) = f(c_2) = d$
+
+Since f is injective, $c_1 = c_2$.
+
+$\Rightarrow c_1 \in X$ and $c_1 = c_2 \in Y$
+
+So $c_1 \in X \cap Y$
+
+Where $d = f(c_1) \in f(X \bigcap Y)$
+
+So $f(X) \bigcap f(Y) \subseteq f(X \bigcap Y)$.
+
+$f(X) \bigcap f(Y) = f(X \bigcap Y)$
+\end{proof}
+\vfill
+\begin{Lemma}
+Suppose that $q \neq 1$ is a real number. Then
+$$
+1+q+q^{2}+\cdots+q^{n}=\frac{1-q^{n+1}}{1-q} \quad \text { for all } n \in
+\mathbb{Z}, n \geq 0
+$$
+\end{Lemma}
+\begin{proof}
+(Induction)
+
+Base cases:
+\[
+1 + q^0 = \frac{1-q^{1}}{1-q}
+\]
+$1=1$, true.
+
+Induction steps:
+
+Assume: $$
+1+q+q^{2}+\cdots+q^{n}=\frac{1-q^{n+1}}{1-q} \quad$$
+
+$$
+1+q+q^{2}+\cdots+q^{n} + q^{n+1}=\frac{1-q^{n+1}}{1-q} +q^{n+1}\quad$$
+
+$$
+1+q+q^{2}+\cdots+q^{n} + q^{n+1}=\frac{1-q^{n+1}}{1-q} +\frac{q^{n+1} (1-q)}{1-q}\quad$$
+
+$$
+1+q+q^{2}+\cdots+q^{n} + q^{n+1}=\frac{1-q^{n+1}+q^{n+1}-q^{n+2}}{1-q}\quad$$
+
+$$
+1+q+q^{2}+\cdots+q^{n} + q^{n+1}=\frac{1-q^{n+2}}{1-q}\quad$$
+
+So $$
+1+q+q^{2}+\cdots+q^{n}=\frac{1-q^{n+1}}{1-q} \quad \text { for all } n \in
+\mathbb{Z}, n \geq 0
+$$
+\end{proof}
+\vfill
+\begin{Lemma}
+Let $f$ be a function such that $f(x y)=x f(y)+y f(x)$ for all $x, y \in \mathbb{R}
+$. Then $f(1)=0$ and $f\left(u^{n}\right)=n u^{n-1} f(u)$ for all $u \in \mathbb{R}
+$ and $n \in \mathbb{N}$.
+\end{Lemma}
+\begin{proof}
+\[
+f(1) = f(1\cdot1) = 1f(1)+1f(1) = 2f(1)
+\]
+
+\[
+2f(1) - f(1) = f(1) = 0
+\]
+(Induction)
+
+Base cases: 
+
+\[
+f(u^1) = f(u)
+\]
+
+\[
+1u^{0}f(u) = f(u)
+\]
+
+Equality holds.
+
+Induction steps:
+
+Assume $f\left(u^{n}\right)=n u^{n-1} f(u)$.
+
+\[
+f(u^{n+1}) = f(u\cdot u^n) = uf(u^n)+u^nf(u) = u \cdot nu^{n-1}f(u)+u^nf(u)
+\]
+
+\[
+=(nu^n+u^n)f(u) = (n+1)u^nf(u)
+\]
+
+So, $f\left(u^{n}\right)=n u^{n-1} f(u)$ for all $u \in \mathbb{R}
+$ and $n \in \mathbb{N}$.
+\end{proof}
+\vfill
+\begin{Lemma}
+Let $P$ be the set of polynomials with real coefficients and with degree $\geq
+1$. If $f \in P$,let $A_{f}:=\{x \in \mathbb{R}: f(x)=0\}$.\\
+Then $\bigcup\limits_{f \in P} A_{f}=\mathbb{R}$ and $\bigcap\limits_{f \in P}
+A_{f}=\emptyset$.
+\end{Lemma}
+\begin{proof}
+I. $\bigcup\limits_{f \in P} A_{f}=\mathbb{R}$
+
+i. $\R \subseteq \bigcup\limits_{f \in P} A_{f}$.
+
+$\forall a \in \R$, 
+$f_a(x) := x - a \in P$.
+
+\[
+f_a(a) = a-a = 0
+\]
+So, $\forall a \in \R, \exists f_a \in P, f_a(a) = 0$.
+
+$\Rightarrow \forall a\in \R,a \in \bigcup\limits_{f \in P} A_{f}$
+
+$\R \subseteq \bigcup\limits_{f \in P} A_{f}$.
+
+ii. $\bigcup\limits_{f \in P} A_{f} \subseteq \R $.
+
+Assume $b \in \bigcup\limits_{f \in P} A_{f}$.
+
+$\forall f \in P, A_f \subseteq \R$
+
+$b \in A_f$, for some $f\in P$, so $b \in \R$.
+
+$\bigcup\limits_{f \in P} A_{f} \subseteq \R $
+
+By i. and ii., $\bigcup\limits_{f \in P} A_{f} = \R $.
+
+II. $\bigcap\limits_{f \in P}
+A_{f}=\emptyset$.
+
+(Contradiction)
+
+Assume $\exists c \in R, \forall f \in P, f(c) = 0$.
+
+Let $f_1(x) :=x-1 \in P$, $f_2(x) :=x-2 \in P$.
+
+Since $f_1(c) = 0$, $c-1=0$, $c=1$.
+
+Since $f_2(c) = 0$, $c-2=0$, $c=2$.
+
+Contradiction, there is no such $c$ in $\bigcap\limits_{f \in P}
+A_{f}$.
+
+$\iff \bigcap\limits_{f \in P}
+A_{f} = \emptyset$
+\end{proof}
+\vfill
+\begin{Lemma}
+The relation $\sim$ defined on $\Z\times \N$ by
+\[(a,b)\sim (c,d)\iff ad = bc\]
+is an equivalence relation.
+\end{Lemma}
+\begin{proof}
+i. Reflexive 
+
+Let $a\in \Z$, and $b\in \N$.
+\[(a,b)\sim (a,b)\iff ab = ba\]
+
+And $ab = ba$ by properties of multiplication under $\R$, and $\Z,\N \subset \R$, so $\sim$ is reflexive
+
+ii. Symmetric
+
+Let $c\in \Z$, and $d\in \N$, assume
+\[(a,b)\sim (c,d)\]
+Where $ad = bc$.
+
+Since $ad = bc \iff da = cb$,
+\[da = cb\iff (c,d)\sim (a,b)\]
+So $\sim$ is symmetric.
+
+iii. Transitive
+
+Let $e\in \Z$, and $f\in \N$, assume $(a,b)\sim (c,d)$ and $(c,d) \sim (e,f)$.
+
+$\Rightarrow ad = bc, cf = de$.
+
+Since $b \in \N$, $b \neq 0$.
+
+$c= \frac{ad}{b}$, and substitute it in second equation.
+\[\frac{ad}{b}f = de\]
+\[adf = dbe\]
+Since $d\in \N$, $d \neq 0$.
+\[af = de\]
+\[
+(a,d) \sim (e,f)
+\]
+
+$\sim$ is transitive.
+
+So $\sim$ is an equivalence relation.
+
+\end{proof}
+\vfill
+\end{document}
